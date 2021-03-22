@@ -1,0 +1,53 @@
+---
+title: "Assginement2_R-Markdown"
+author: "JinMyeong"
+date: '2021 3 22 '
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ 
+# Title: My assignment 2_R-Markdown
+## Name: JinMyeongJang
+### Date: '2021. 03. 22'
+
+
+**This table is made for my assignment.This shows the result of the NBA matches played on March 22.**
+Each contents mean home team, home team's score, away team's score, away team, top performers per each teams.
+I changed some parts of the text with italic to show winner team in this table.
+
+
+------------------------------------------------------------
+**Tables: The result of the NBA matches on March 22**
+------------------------------------------------------------
+
+Home team | Home team's score | Away team's score | Away team | Home top performers |Away top performers
+----------| ----------------- |------------------ |---------- |---------------------|-------------------
+Heat      | 106               |109                | *Pacers*    | Bam Adebayo         | Myles Turner  
+Rockets   | 112               |114                | *Thunder*   | Christian Wood      | Luguentz Dort 
+Nuggets   | 108               |113                | *Pelicans*  | Nikola Jokic        | Brandon Ingram 
+*Celtics* | 112               |96                 | Magic       | Jaylen Brown        |  Nikola Vucevic
+  *Nets*  | 106               |113                |  Wizards    | Kyrie Irving        |  Russell Westbrook
+------------------------------------------------------------
+
+
+
+
+## Using chunks to make a matrix
+
+
+```{r, echo = FALSE}
+Home_team <- c("Heat", "Rockets", "Nuggets", "Celtics", "Nets")
+Home_team_score <-c(106, 112,108,112,106)
+Away_team_score <-c(109,114,113,96,113)
+Away_team <-c("Pacers", "Thunder", "Pelicans", "Magic", "Wizard")
+Home_top_performers <-c("Bam Adebayo", "Christian Wood", "Nikola Jokic", "Jaylen Brown","Kyrie Irving")
+Away_top_performers <-c("Myles Turner", "Luguentz Dort", "Brandon Ingram", "Nikola Vucevic", "Russell Westbrook")
+
+df <- data.frame(Home_team, Home_team_score, Away_team_score, Away_team, Home_top_performers, Away_top_performers)
+df
+```
